@@ -1,0 +1,32 @@
+about little sister
+-----------------------------------------
+
+the goal of this project is to create an android app that:
+
+(0) connects to a remote vpn service.
+(1) automatically configures itself.
+(3) uses random usernames and passwords, for greater security and anonymity.
+(4) verifies the identity of the vpn server when using VPN protocols that don't.
+
+development notes
+------------------------------------------
+
+code adapted from Settings app, from:
+  git://android.git.kernel.org/platform/packages/apps/Settings.git
+  specifically, com.android.settings.vpn
+
+requires android.net.vpn library, which is not in android.jar.
+  built a custom android.net.vpn.jar using the source file in
+  git clone git://android.git.kernel.org/platform/frameworks/base.git
+  directory: vpn/java/android/net/vpn
+
+requires android.security library, which is not in android.jar.
+  built a custom android.security.jar using 
+  git clone git://android.git.kernel.org/platform/frameworks/base.git
+  directory: keystore/java/android/security
+
+
+development with ant
+-------------------------
+
+ant install && adb shell 'am start -n org.freerobot.littlesister/.Main'
