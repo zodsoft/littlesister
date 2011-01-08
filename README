@@ -29,4 +29,18 @@ requires android.security library, which is not in android.jar.
 development with ant
 -------------------------
 
+sudo apt-get install sun-java6-jdk ant
+sudo update-java-alternatives -s java-6-sun
+
+download android sdk to ~/android/sdk/tools
+
+add to .bashrc
+  export PATH=${PATH}:~/android/sdk/tools:~/android/sdk/platform-tools
+
+git clone ...
+
+cd littlesister
+  
+ant compile
+
 ant install && adb shell 'am start -n org.freerobot.littlesister/.Main'
