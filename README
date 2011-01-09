@@ -40,6 +40,7 @@ add to .bashrc
 git clone ...
 
 cd littlesister
+android update project --target android-8 --path .
   
 ant compile
 
